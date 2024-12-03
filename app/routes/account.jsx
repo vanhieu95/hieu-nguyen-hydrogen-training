@@ -31,7 +31,12 @@ export async function loader({context}) {
 export default function AccountLayout() {
   /** @type {LoaderReturnData} */
   const {customer} = useLoaderData();
-  const {firstName, lastName, emailAddress, phoneNumber} = customer;
+  const {
+    firstName,
+    lastName,
+    email: emailAddress,
+    phone: phoneNumber,
+  } = customer;
 
   const heading = customer
     ? customer.firstName
