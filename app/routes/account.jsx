@@ -31,6 +31,7 @@ export async function loader({context}) {
 export default function AccountLayout() {
   /** @type {LoaderReturnData} */
   const {customer} = useLoaderData();
+  const {firstName, lastName, emailAddress, phoneNumber} = customer;
 
   const heading = customer
     ? customer.firstName
@@ -43,6 +44,14 @@ export default function AccountLayout() {
       <h1>{heading}</h1>
       <br />
       <AccountMenu />
+      {/* New section to display account details */}
+      <div>
+        <h2>Account Details</h2>
+        <p>First Name: {firstName}</p>
+        <p>Last Name: {lastName}</p>
+        <p>Email: {emailAddress}</p>
+        <p>Phone Number: {phoneNumber}</p>
+      </div>
       <br />
       <br />
       <Outlet context={{customer}} />
