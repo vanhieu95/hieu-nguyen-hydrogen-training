@@ -4,7 +4,6 @@ export const CUSTOMER_FRAGMENT = `#graphql
     id
     firstName
     lastName
-    email
     defaultAddress {
       ...Address
     }
